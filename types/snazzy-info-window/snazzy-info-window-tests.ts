@@ -102,12 +102,3 @@ const dynamicContent = () => {
     });
     info.open();
 };
-
-// let infoWindow = new SnazzyInfoWindow({
-//     marker: new google.maps.Marker(),
-//     callbacks: {
-//         beforeOpen() {
-//             return false;
-//         }
-//     }
-// });
