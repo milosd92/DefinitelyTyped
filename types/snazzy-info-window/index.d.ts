@@ -42,41 +42,41 @@ declare namespace SnazzyInfoWindow {
          * Called before the info window attempts to open.
          * Return false to cancel the open.
          */
-        beforeOpen?(): boolean;
+        beforeOpen?(): boolean|void;
 
         /**
          * Called when the info window is opening.
          * This occurs at the end of the OverlayView onAdd() implementation.
          * At this point the info window is added to the DOM but is not drawn yet.
          */
-        open?(): boolean;
+        open?(): boolean|void;
 
         /**
          * Called when the info window has opened.
          * This occurs at the end of the OverlayView draw() implementation.
          * At this point the info window is added to the DOM and should be visible.
          */
-        afterOpen?(): boolean;
+        afterOpen?(): boolean|void;
 
         /**
          * Called before the info window attempts to close.
          * Return false to cancel the close.
          */
-        beforeClose?(): boolean;
+        beforeClose?(): boolean|void;
 
         /**
          * Called when the info window is closing.
          * This occurs at the beginning of the OverlayView onRemove() implementation.
          * At this point the info window is still in the DOM.
          */
-        close?(): boolean;
+        close?(): boolean|void;
 
         /**
          * Called after the info window has closed.
          * This occurs at the end of the OverlayView onRemove() implementation.
          * At this point the info window should be removed from the DOM.
          */
-        afterClose?(): boolean;
+        afterClose?(): boolean|void;
     }
 
     interface InfoWindowOptions {
