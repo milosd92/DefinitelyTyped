@@ -24,6 +24,14 @@ const simple = () => {
 // Multiple markers
 
 const multipleMarkers = () => {
+    interface Placement {
+        type: SnazzyInfoWindow.PlacementOptions;
+        LatLng: {
+            lat: number,
+            lng: number
+        };
+    }
+
     let mapCenter = { lat: 40.72, lng: -74 };
     let myMap = new google.maps.Map($('.map-canvas')[0], {
         zoom: 14,
@@ -35,14 +43,14 @@ const multipleMarkers = () => {
     };
 
     let dx = 0.003;
-    let placements: [{ type: SnazzyInfoWindow.PlacementOptions, LatLng: { lat: number, lng: number } }] = [
+    let placements: Placement[] = [
         { type: 'top', LatLng: offsetCenter(dx, 0) },
         { type: 'right', LatLng: offsetCenter(0, dx) },
         { type: 'bottom', LatLng: offsetCenter(-dx, 0) },
         { type: 'left', LatLng: offsetCenter(0, -dx) }
     ];
 
-    $.each(placements, (i, e) => {
+    $.each(placements, (i: number, e: Placement) => {
         let myMarker = new google.maps.Marker({
             map: myMap,
             draggable: true,
