@@ -146,8 +146,8 @@ const jsStyling = () => {
             left: '20px'
         },
         content: '<div>STYLING</div>' +
-                 '<div>WITH</div>' +
-                 '<div><strong>JAVASCRIPT</strong></div>',
+        '<div>WITH</div>' +
+        '<div><strong>JAVASCRIPT</strong></div>',
         showCloseButton: false,
         closeOnMapClick: false,
         padding: '48px',
