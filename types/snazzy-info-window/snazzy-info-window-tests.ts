@@ -1,6 +1,6 @@
 import SnazzyInfoWindow = require('snazzy-info-window');
 import jQuery = require('jquery');
-import * as Handlebars from 'handlebars';
+import Handlebars = require('handlebars');
 
 const simple = () => {
     let myMap = new google.maps.Map($('.map-canvas')[0], {
