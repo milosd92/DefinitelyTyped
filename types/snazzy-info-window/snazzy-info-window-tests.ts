@@ -102,3 +102,61 @@ const dynamicContent = () => {
     });
     info.open();
 };
+
+// Set position
+
+const setPosition = () => {
+    let myMap = new google.maps.Map($('.map-canvas')[0], {
+        zoom: 14,
+        center: new google.maps.LatLng(40.72, -74),
+        clickableIcons: false
+    });
+
+    let info = new SnazzyInfoWindow({
+        map: myMap,
+        position: new google.maps.LatLng(40.72, -74),
+        closeOnMapClick: false,
+        content: 'Click anywhere on the map to change my position!'
+    });
+
+    myMap.addListener('click', e => {
+        info.setPosition(e.latLng);
+        if (!info.isOpen()) {
+            info.open();
+        }
+    });
+    info.open();
+};
+
+const jsStyling = () => {
+    let myMap = new google.maps.Map($('.map-canvas')[0], {
+        zoom: 14,
+        center: new google.maps.LatLng(40.721, -73.991)
+    });
+
+    let myMarker = new google.maps.Marker({
+        map: myMap,
+        position: new google.maps.LatLng(40.72, -74)
+    });
+
+    let info = new SnazzyInfoWindow({
+        marker: myMarker,
+        placement: 'right',
+        offset: {
+            left: '20px'
+        },
+        content: '<div>STYLING</div>' +
+                 '<div>WITH</div>' +
+                 '<div><strong>JAVASCRIPT</strong></div>',
+        showCloseButton: false,
+        closeOnMapClick: false,
+        padding: '48px',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        border: false,
+        borderRadius: '0px',
+        shadow: false,
+        fontColor: '#fff',
+        fontSize: '15px'
+    });
+    info.open();
+};
