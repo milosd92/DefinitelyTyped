@@ -314,6 +314,4 @@ declare class SnazzyInfoWindow extends google.maps.OverlayView {
     getWrapper(): HTMLElement;
 }
 
-declare module "snazzy-info-window" {
-    export = SnazzyInfoWindow;
-}
+export = SnazzyInfoWindow;
