@@ -5,7 +5,7 @@
 
 /// <reference types="googlemaps" />
 
-declare namespace Snazzy {
+declare namespace SnazzyInfoWindow {
     type PlacementOptions =
         'top' | 'bottom' | 'left' | 'right';
 
@@ -269,7 +269,7 @@ declare namespace Snazzy {
 }
 
 declare class SnazzyInfoWindow extends google.maps.OverlayView {
-    constructor(opts: Snazzy.InfoWindowOptions);
+    constructor(opts: SnazzyInfoWindow.InfoWindowOptions);
 
     /**
      * Will attempt to open the info window.
